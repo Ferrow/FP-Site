@@ -16,9 +16,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="sk">
-      <body className={inter.className}>
-        {/* <Navigation /> */}
+    <html lang="sk" className="scroll-smooth">
+      <body className={`${inter.className}`}>
+        <Navigation />
         {children}
       </body>
     </html>

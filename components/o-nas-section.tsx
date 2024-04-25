@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 const ONasSection = () => {
   return (
-    <div className="flex gap-56 container py-10">
+    <section id="o-nas-section" className="flex gap-56 container py-10">
       <div className="flex flex-col justify-center gap-10 max-w-[500px]">
         <div className="flex flex-col gap-4">
           <span>O NÁS</span>
@@ -26,7 +26,7 @@ const ONasSection = () => {
         height={800}
         className="bg-black max-w-[400px] max-h-[800px]"
       />
-    </div>
+    </section>
   );
 };
 
