@@ -2,7 +2,10 @@ import { Button } from "./ui/button";
 
 export default async function HeroSection() {
   return (
-    <section className="w-full h-screen bg-hero-img bg-cover flex flex-col items-center justify-center text-white">
+    <section
+      id="domov"
+      className="w-full h-screen bg-hero-img bg-cover flex flex-col items-center justify-center text-white"
+    >
       <div className="mx-auto container space-y-12">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">

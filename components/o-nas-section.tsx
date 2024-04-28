@@ -18,9 +18,9 @@ const ONasSection = () => {
           Potrebujete poradiť s úverom, investíciami, poistením alebo
           refinancovať svoj stávajúci produkt? U nás ste v správnych rukách.
         </p>
-        <Button size={"default"} className="w-[200px]">
+        {/* <Button size={"default"} className="w-[200px]">
           Dozvedieť sa viac
-        </Button>
+        </Button> */}
       </div>
       <Image
         src="/3.jpg"

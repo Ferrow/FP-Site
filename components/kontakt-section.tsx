@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "./ui/button";
 
 const KontaktSection = () => {
@@ -8,7 +9,9 @@ const KontaktSection = () => {
     >
       <h2 className="text-2xl font-bold text-center">OTÁZKY?</h2>
       <p>Kontaktujte nás a my urobíme všetko pre to, aby sme vám pomohli.</p>
-      <Button className="w-[200px] mx-auto">Kontakt</Button>
+      <Link href="/kontakt">
+        <Button className="w-[200px] mx-auto">Kontakt</Button>
+      </Link>
     </section>
   );
 };

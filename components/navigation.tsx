@@ -38,21 +38,21 @@ const Navigation = ({ background }: { background?: string }) => {
         </Link>
 
         <ul className="flex text-[11px] sm:text-base gap-4 items-center justify-center text-white">
-          <li>
-            <Link href={"/"}>Domov</Link>
+          <li className="hover:underline hover:underline-offset-4">
+            <a href={pathname === "/" ? "#domov" : "/"}>Domov</a>
           </li>
-          <li>
+          <li className="hover:underline hover:underline-offset-4">
             <a href={pathname === "/" ? "#nase-sluzby-section" : "/"}>Služby</a>
           </li>
-          <li className="">
+          <li className="hover:underline hover:underline-offset-4">
             <a href={pathname === "/" ? "#o-nas-section" : "/o-nas"}>O Nás</a>
           </li>
-          <li>
+          <li className="hover:underline hover:underline-offset-4">
             <a href={pathname === "/" ? "#clanky-section" : "/clanky"}>
               Články
             </a>
           </li>
-          <li>
+          <li className="hover:underline hover:underline-offset-4">
             <a href={pathname === "/" ? "#kontakt-section" : "/kontakt"}>
               Kontakt
             </a>
