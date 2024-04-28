@@ -37,14 +37,14 @@ const Navigation = ({ background }: { background?: string }) => {
           <Image src={"/logo.png"} alt="logo" width={100} height={100} />
         </Link>
 
-        <ul className="flex gap-4 items-center justify-center text-white">
+        <ul className="flex text-[11px] sm:text-base gap-4 items-center justify-center text-white">
           <li>
             <Link href={"/"}>Domov</Link>
           </li>
           <li>
             <a href={pathname === "/" ? "#nase-sluzby-section" : "/"}>Služby</a>
           </li>
-          <li>
+          <li className="">
             <a href={pathname === "/" ? "#o-nas-section" : "/o-nas"}>O Nás</a>
           </li>
           <li>
