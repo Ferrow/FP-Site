@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <div className={inter.className}>
-      <Navigation background="bg-black" />
+      <Navigation background="bg-slate-800" />
       {children}
     </div>
   );

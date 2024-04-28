@@ -4,7 +4,6 @@ import Link from "next/link";
 
 export default async function ClankyPage() {
   const articles = await getAllArticles();
-  console.log(articles);
 
   return (
     <div className="space-y-12 flex flex-col py-24 items-center container">

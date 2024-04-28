@@ -54,9 +54,31 @@ function extractArticleEntries(fetchResponse: any) {
   return fetchResponse?.data?.knowledgeArticleCollection?.items;
 }
 
-export async function getAllArticles(
+export async function getArticlesForHomepage(
   // For this demo set the default limit to always return 3 articles.
   limit = 6,
+  // By default this function will return published content but will provide an option to
+  // return draft content for reviewing articles before they are live
+  isDraftMode = false
+) {
+  const articles = await fetchGraphQL(
+    `query {
+        knowledgeArticleCollection(where:{slug_exists: true}, order: date_DESC, limit: ${limit}, preview: ${
+      isDraftMode ? "true" : "false"
+    }) {
+          items {
+            ${ARTICLE_GRAPHQL_FIELDS}
+          }
+        }
+      }`,
+    isDraftMode
+  );
+  return extractArticleEntries(articles);
+}
+
+export async function getAllArticles(
+  // For this demo set the default limit to always return 3 articles.
+  limit = 9,
   // By default this function will return published content but will provide an option to
   // return draft content for reviewing articles before they are live
   isDraftMode = false

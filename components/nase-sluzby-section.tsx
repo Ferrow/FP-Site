@@ -9,7 +9,7 @@ const NaseSluzbySection = () => {
       <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl border-b-2 border-b-slate-600 pb-6">
         Naše služby
       </h1>
-      <div className="flex gap-10 pt-20">
+      <div className="flex flex-col md:flex-row gap-10 pt-20">
         <div className="basis-1/3 flex flex-col gap-4">
           <Image
             src="/5.jpg"

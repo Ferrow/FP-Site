@@ -4,16 +4,21 @@ import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export async function generateStaticParams() {
-  const allArticles = await getAllArticles();
+interface Asset {
+  sys: {
+    id: string;
+  };
+  url: string;
+}
 
-  return allArticles.map((article: any) => ({
-    slug: article.slug,
-  }));
+interface AssetUrls {
+  [key: string]: string;
 }
 
 export default async function KnowledgeArticlePage({ params }: any) {
   const article = await getArticle(params.slug);
+  const content = article.details?.links.assets.block[0].url;
+  console.log(content);
 
   if (!article) {
     notFound();
@@ -29,11 +34,18 @@ export default async function KnowledgeArticlePage({ params }: any) {
     });
     return modifiedContent;
   };
+  const assetUrls = article.details.links.assets.block.reduce(
+    (acc: AssetUrls, asset: Asset) => {
+      acc[asset.sys.id] = asset.url;
+      return acc;
+    },
+    {}
+  );
 
   return (
     <main className="container flex min-h-screen flex-col items-center justify-between p-24 bg-white">
-      <section className="w-full">
-        <div className="container space-y-12 px-4 md:px-6">
+      <section className="w-full pt-10">
+        <div className="space-y-12 px-4 md:px-6 max-w-[900px] mx-auto">
           <div className="space-y-4">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">
               {article.title}
@@ -62,6 +74,22 @@ export default async function KnowledgeArticlePage({ params }: any) {
                         "heading-3": (node, children) => (
                           <h3 className="text-2xl font-bold">{children}</h3>
                         ),
+                        "embedded-asset-block": (node) => {
+                          // Assuming the node contains an asset ID that can be used to look up the URL
+                          const assetId = node.data.target.sys.id;
+                          const imageUrl = assetUrls[assetId];
+                          return (
+                            <>
+                              <Image
+                                alt="Article Image"
+                                className="w-full overflow-hidden rounded-xl object-cover"
+                                height="365"
+                                src={imageUrl}
+                                width="650"
+                              />
+                            </>
+                          );
+                        },
                       },
                     })
                   )}

@@ -1,13 +1,15 @@
-import { getAllArticles } from "@/lib/contentful";
+import { getArticlesForHomepage } from "@/lib/contentful";
 import Image from "next/image";
 import Link from "next/link";
 
 const ClankySection = async () => {
-  const articles = await getAllArticles();
-  console.log(articles);
+  const articles = await getArticlesForHomepage();
 
   return (
-    <div className="space-y-12 flex flex-col py-24 items-center container">
+    <section
+      id="clanky-section"
+      className="space-y-12 flex flex-col py-24 items-center container"
+    >
       <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl border-b-2 border-b-slate-600 pb-6">
         Články
       </h1>
@@ -18,13 +20,15 @@ const ClankySection = async () => {
               key={article.sys.id}
               className="h-full flex flex-col rounded-lg shadow-lg overflow-hidden"
             >
-              <Image
-                alt="placeholder"
-                className="aspect-[4/3] object-cover w-full"
-                height="263"
-                src={article.articleImage.url}
-                width="350"
-              />
+              <Link href={`/clanky/${article.slug}`}>
+                <Image
+                  alt="placeholder"
+                  className="aspect-[4/3] object-cover w-full"
+                  height="263"
+                  src={article.articleImage.url}
+                  width="350"
+                />
+              </Link>
               <div className="flex-1 p-6">
                 <Link href={`/clanky/${article.slug}`}>
                   <h3 className="text-2xl font-bold leading-tight text-zinc-900 dark:text-zinc-50  py-4">
@@ -52,7 +56,7 @@ const ClankySection = async () => {
             </article>
           ))}
       </div>
-    </div>
+    </section>
   );
 };
 
