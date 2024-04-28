@@ -17,8 +17,6 @@ interface AssetUrls {
 
 export default async function KnowledgeArticlePage({ params }: any) {
   const article = await getArticle(params.slug);
-  const content = article.details?.links.assets.block[0].url;
-  console.log(content);
 
   if (!article) {
     notFound();
