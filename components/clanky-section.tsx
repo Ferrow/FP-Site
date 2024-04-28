@@ -1,6 +1,7 @@
 import { getArticlesForHomepage } from "@/lib/contentful";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 const ClankySection = async () => {
   const articles = await getArticlesForHomepage();
@@ -56,6 +57,9 @@ const ClankySection = async () => {
             </article>
           ))}
       </div>
+      <Link href="/clanky">
+        <Button>Všetky články</Button>
+      </Link>
     </section>
   );
 };
