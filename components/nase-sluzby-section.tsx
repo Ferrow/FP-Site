@@ -2,7 +2,10 @@ import Image from "next/image";
 
 const NaseSluzbySection = () => {
   return (
-    <div className="flex flex-col py-24 items-center container">
+    <section
+      id="nase-sluzby-section"
+      className="flex flex-col py-24 items-center container"
+    >
       <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl border-b-2 border-b-slate-600 pb-6">
         Naše služby
       </h1>
@@ -72,7 +75,7 @@ const NaseSluzbySection = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

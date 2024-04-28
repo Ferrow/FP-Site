@@ -9,17 +9,17 @@ import Image from "next/image";
 export default async function Home() {
   return (
     <main className="flex flex-col items-center justify-between">
-      {/* <div className="bg-black text-white h-screen w-screen flex flex-col justify-center items-center">
+      <div className="bg-black text-white h-screen w-screen flex flex-col justify-center items-center">
         <Image src={"/logo.png"} alt="logo" width={150} height={150} />
         <p>Stránka je momentálne nedostupná, prebieha renovácia.</p>
         <p>Ďakujeme za pochopenie.</p>
-      </div> */}
-      <HeroSection />
+      </div>
+      {/* <HeroSection />
       <NaseSluzbySection />
       <ONasSection />
-      <ClankySection />
+      <ClankySection /> */}
       {/* <SpolupracujemeSection /> */}
-      <KontaktSection />
+      {/* <KontaktSection /> */}
     </main>
   );
 }

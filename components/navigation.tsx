@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -9,6 +9,7 @@ import Link from "next/link";
 const Navigation = ({ background }: { background?: string }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,13 +42,21 @@ const Navigation = ({ background }: { background?: string }) => {
             <Link href={"/"}>Domov</Link>
           </li>
           <li>
-            <a href="#o-nas-section">O Nás</a>
+            <a href={pathname === "/" ? "#nase-sluzby-section" : "/"}>Služby</a>
           </li>
-          <li>Služby</li>
           <li>
-            <a href="/clanky">Články</a>
+            <a href={pathname === "/" ? "#o-nas-section" : "/o-nas"}>O Nás</a>
           </li>
-          <li>Kontakt</li>
+          <li>
+            <a href={pathname === "/" ? "#clanky-section" : "/clanky"}>
+              Články
+            </a>
+          </li>
+          <li>
+            <a href={pathname === "/" ? "#kontakt-section" : "/kontakt"}>
+              Kontakt
+            </a>
+          </li>
           {/* <li>Napíš nám</li> */}
         </ul>
       </div>
