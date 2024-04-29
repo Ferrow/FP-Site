@@ -41,7 +41,7 @@ export default async function KnowledgeArticlePage({ params }: any) {
   );
 
   return (
-    <main className="container flex min-h-screen flex-col items-center justify-between p-24 bg-white">
+    <main className="container flex min-h-screen flex-col items-center justify-between pt-24 bg-white">
       <section className="w-full pt-10">
         <div className="space-y-12 px-4 md:px-6 max-w-[900px] mx-auto">
           <div className="space-y-4">

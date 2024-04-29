@@ -34,10 +34,16 @@ const Navigation = ({ background }: { background?: string }) => {
     <div className={`${updateBackgroundColor()} fixed w-full`}>
       <div className="container flex justify-between items-center h-[70px]">
         <Link href={"/"}>
-          <Image src={"/logo.png"} alt="logo" width={100} height={100} />
+          <Image
+            src={"/logo.png"}
+            alt="logo"
+            width={100}
+            height={100}
+            className="w-[70px] sm:w-[100px]"
+          />
         </Link>
 
-        <ul className="flex text-[11px] sm:text-base gap-4 items-center justify-center text-white">
+        <ul className="flex text-[10px] sm:text-base gap-4 items-center justify-center text-white">
           <li className="hover:underline hover:underline-offset-4">
             <a href={pathname === "/" ? "#domov" : "/"}>Domov</a>
           </li>
@@ -45,7 +51,7 @@ const Navigation = ({ background }: { background?: string }) => {
             <a href={pathname === "/" ? "#nase-sluzby-section" : "/"}>Služby</a>
           </li>
           <li className="hover:underline hover:underline-offset-4">
-            <a href={pathname === "/" ? "#o-nas-section" : "/o-nas"}>O Nás</a>
+            <a href={pathname === "/" ? "#o-nas-section" : "/"}>O Nás</a>
           </li>
           <li className="hover:underline hover:underline-offset-4">
             <a href={pathname === "/" ? "#clanky-section" : "/clanky"}>

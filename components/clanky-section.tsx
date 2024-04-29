@@ -14,7 +14,7 @@ const ClankySection = async () => {
       <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl border-b-2 border-b-slate-600 pb-6">
         Články
       </h1>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-rows-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {articles &&
           articles.map((article: any) => (
             <article
