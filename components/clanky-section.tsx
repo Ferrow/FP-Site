@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 
+export const dynamic = "force-dynamic";
 const ClankySection = async () => {
   const articles = await getArticlesForHomepage();
 

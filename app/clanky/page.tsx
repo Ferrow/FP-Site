@@ -2,6 +2,7 @@ import { getAllArticles, getAllArticlesTwo } from "@/lib/contentful";
 import Image from "next/image";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
 export default async function ClankyPage() {
   const articles = await getAllArticles();
   const articles_two = await getAllArticlesTwo();
