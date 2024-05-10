@@ -41,6 +41,7 @@ async function fetchGraphQL(query: string, preview = false) {
             ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
             : process.env.CONTENTFUL_ACCESS_TOKEN
         }`,
+        "Cache-Control": "no-store",
       },
       body: JSON.stringify({ query }),
       // Associate all fetches for articles with an "articles" cache tag so content can

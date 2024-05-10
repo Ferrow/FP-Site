@@ -1,4 +1,4 @@
-import { getAllArticles, getArticle } from "@/lib/contentful";
+import { getArticle } from "@/lib/contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES, Block, Inline } from "@contentful/rich-text-types";
 import Image from "next/image";
@@ -30,24 +30,6 @@ export default async function KnowledgeArticlePage({ params }: any) {
   if (!article) {
     notFound();
   }
-
-  // const addEmptyLines = (content: any) => {
-  //   const modifiedContent: any = [];
-  //   content.forEach((node: any, index: number) => {
-  //     modifiedContent.push(node);
-  //     if (index < content.length - 1) {
-  //       modifiedContent.push(<br key={`br-${index}`} />);
-  //     }
-  //   });
-  //   return modifiedContent;
-  // };
-  // const assetUrls = article.details.links.assets.block.reduce(
-  //   (acc: AssetUrls, asset: Asset) => {
-  //     acc[asset.sys.id] = asset.url;
-  //     return acc;
-  //   },
-  //   {}
-  // );
 
   const assetUrls = article.details.links.assets.block.reduce(
     (acc: AssetUrls, asset: Asset) => {
