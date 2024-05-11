@@ -17,6 +17,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sk" className="scroll-smooth">
+      <head>
+        <script
+          id="cookieyes"
+          type="text/javascript"
+          src="https://cdn-cookieyes.com/client_data/68ef4f2058e127587c541af7/script.js"
+          defer
+        ></script>
+      </head>
       <body className={`${inter.className}`}>
         <Navigation />
         {children}
