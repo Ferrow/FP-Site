@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navigation from "@/components/navigation";
+import { ContentfulLivePreviewProvider } from "@contentful/live-preview/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,8 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <div className={inter.className}>
-      <Navigation background="bg-slate-800" />
-      {children}
+      <ContentfulLivePreviewProvider locale="sk">
+        <Navigation background="bg-slate-800" />
+        {children}
+      </ContentfulLivePreviewProvider>
     </div>
   );
 }
