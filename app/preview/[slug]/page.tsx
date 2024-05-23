@@ -3,6 +3,10 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, INLINES, Block, Inline } from "@contentful/rich-text-types";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import {
+  useContentfulInspectorMode,
+  useContentfulLiveUpdates,
+} from "@contentful/live-preview/react";
 
 interface Asset {
   sys: {
@@ -25,7 +29,8 @@ interface RenderOptions {
 }
 
 export default async function KnowledgeArticlePage({ params }: any) {
-  const article = await getArticle(params.slug);
+  const article = useContentfulLiveUpdates(params.blogPost);
+  //   const article = await getArticle(params.slug);
 
   if (!article) {
     notFound();
