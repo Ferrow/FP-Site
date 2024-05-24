@@ -25,7 +25,7 @@ const config = {
       backgroundImage: {
         "hero-img": "url('/hero/1.jpg')",
         "footer-img": "url('/hero/6.jpg')",
-        "castle-img": "url('/castle.jpg')",
+        "castle-img": "url('/hero/castle.webp')",
       },
       colors: {
         border: "hsl(var(--border))",
