@@ -1,8 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
 import castle from "../public/castle.jpg";
+import HeroTextAnimations from "./hero-text-animations";
 
 export default function HeroSection() {
   return (
@@ -14,60 +12,12 @@ export default function HeroSection() {
         src={castle}
         alt="logo"
         sizes="(100vw, 100vh)"
+        priority
         className="w-full h-full object-cover object-top absolute left-0 top-0 z-[-1]"
       />
       <div className="mx-auto container space-y-12">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <motion.h1
-              initial={{ opacity: 0, y: 50 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 0.7,
-                  ease: "easeInOut",
-                  stiffness: 300,
-                },
-              }}
-              className="text-3xl [text-shadow:_3px_4px_7px_rgb(0_0_0_/_70%)] font-bold tracking-tighter sm:text-5xl"
-            >
-              poraď sa s
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 50 }}
-              animate={{
-                opacity: 1,
-                y: -3,
-                transition: {
-                  duration: 0.7,
-                  delay: 0.2,
-                  ease: "easeInOut",
-                  stiffness: 300,
-                },
-              }}
-              className="text-5xl sm:text-8xl font-bold [text-shadow:_3px_4px_7px_rgb(0_0_0_/_70%)]"
-            >
-              odborníkmi
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 50 }}
-              animate={{
-                opacity: 1,
-                y: -5,
-                transition: {
-                  duration: 0.7,
-                  delay: 0.4,
-                  ease: "easeInOut",
-                  stiffness: 300,
-                },
-              }}
-              className="max-w-[900px] text-white [text-shadow:_3px_4px_7px_rgb(0_0_0_/_70%)] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-zinc-400"
-            >
-              pomôžeme ti naplniť tvoje finančné ciele
-            </motion.p>
-            {/* <Button>O Projekte</Button> */}
-          </div>
+          <HeroTextAnimations />
         </div>
       </div>
       <svg
