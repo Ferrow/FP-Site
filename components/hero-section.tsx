@@ -1,13 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import castle from "../public/castle.jpg";
 
 export default function HeroSection() {
   return (
     <section
       id="domov"
-      className="w-full h-screen bg-castle-img bg-black/30 bg-blend-multiply bg-cover flex flex-col items-center justify-center text-white"
+      className="w-full h-screen bg-black/30 bg-blend-multiply flex flex-col items-center justify-center text-white"
     >
+      <Image
+        src={castle}
+        alt="logo"
+        sizes="(100vw, 100vh)"
+        className="w-full h-full object-cover object-top absolute left-0 top-0 z-[-1]"
+      />
       <div className="mx-auto container space-y-12">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
