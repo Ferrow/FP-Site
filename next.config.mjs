@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
+
+const withPlugins = require("next-compose-plugins");
+const sitemap = require("next-sitemap");
+
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -12,4 +16,5 @@ const nextConfig = {
   },
 };
 
+module.exports = withPlugins([[sitemap]], nextConfig);
 export default nextConfig;
