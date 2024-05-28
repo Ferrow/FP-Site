@@ -72,7 +72,7 @@ export default function KontaktPage() {
   }
 
   return (
-    <div className="container py-24 sm:w-[500px]">
+    <div className="container py-32 sm:w-[500px]">
       <h1 className="text-3xl font-bold pb-4">Kontakt</h1>
       {message ? (
         <p>{message}</p>

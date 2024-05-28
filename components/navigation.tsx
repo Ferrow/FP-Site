@@ -25,7 +25,7 @@ const Navigation = ({ background }: { background?: string }) => {
 
   const updateBackgroundColor = () => {
     if (pathname === "/" && scrollPosition > 500) {
-      return "bg-slate-800"; // Change this to the desired background color
+      return "bg-slate-800";
     }
     return background;
   };
@@ -59,9 +59,7 @@ const Navigation = ({ background }: { background?: string }) => {
             </a>
           </li>
           <li className="hover:underline hover:underline-offset-4">
-            <a href={pathname === "/" ? "#kontakt-section" : "/kontakt"}>
-              Kontakt
-            </a>
+            <a href="/kontakt">Kontakt</a>
           </li>
           {/* <li>Napíš nám</li> */}
         </ul>
