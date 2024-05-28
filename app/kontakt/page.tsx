@@ -72,67 +72,73 @@ export default function KontaktPage() {
   }
 
   return (
-    <div className="container py-32 sm:w-[500px]">
-      <h1 className="text-3xl font-bold pb-4">Kontakt</h1>
-      {message ? (
-        <p>{message}</p>
-      ) : (
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            <FormField
-              control={form.control}
-              name="username"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Meno</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Meno" {...field} disabled={isSending} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Email"
-                      {...field}
-                      disabled={isSending}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Správa</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      placeholder="Správa"
-                      {...field}
-                      disabled={isSending}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button type="submit" disabled={isSending}>
-              {isSending ? <span>Odosielam...</span> : <span>Odoslať</span>}
-            </Button>
-          </form>
-        </Form>
-      )}
-      {error && <p className="text-red-500">{error}</p>}
+    <div className="container min-h-[calc(100vh-412px)] pt-[70px] sm:w-[500px] flex flex-col">
+      <div className="py-32">
+        <h1 className="text-3xl font-bold pb-4">Kontakt</h1>
+        {message ? (
+          <p>{message}</p>
+        ) : (
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <FormField
+                control={form.control}
+                name="username"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Meno</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Meno"
+                        {...field}
+                        disabled={isSending}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Email"
+                        {...field}
+                        disabled={isSending}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Správa</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        placeholder="Správa"
+                        {...field}
+                        disabled={isSending}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button type="submit" disabled={isSending}>
+                {isSending ? <span>Odosielam...</span> : <span>Odoslať</span>}
+              </Button>
+            </form>
+          </Form>
+        )}
+        {error && <p className="text-red-500">{error}</p>}
+      </div>
     </div>
   );
 }

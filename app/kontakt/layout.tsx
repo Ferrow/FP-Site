@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={inter.className}>
+    <div className={`${inter.className}`}>
       <Navigation background="bg-slate-800" />
       {children}
     </div>

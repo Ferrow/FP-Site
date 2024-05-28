@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <div className={inter.className}>
       <Navigation background="bg-slate-800" />
-      {children}
+      <div className="pt-[70px]">{children}</div>
     </div>
   );
 }

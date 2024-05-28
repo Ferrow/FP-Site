@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className="py-32 bg-slate-800 font-poppins text-white">
       <div
         id="footer"
-        className="h-[calc(100%-80px)] max-w-[1000px] mx-auto px-4 py-8 flex flex-col gap-8 lg:py-0"
+        className="h-[calc(100%-70px)] max-w-[1000px] mx-auto px-4 py-8 flex flex-col gap-8 lg:py-0"
       >
         <div className="flex flex-col gap-8 lg:flex-row lg:justify-between">
           <div className="flex flex-col items-center justify-center gap-6 text-middle text-sm lg:items-start lg:pt-1 lg:pr-40">
