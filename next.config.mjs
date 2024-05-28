@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
-const withPlugins = require("next-compose-plugins");
-const sitemap = require("next-sitemap");
+import { withPlugins } from "next-compose-plugins";
+import { sitemap } from "next-sitemap";
 
 const nextConfig = {
   images: {
