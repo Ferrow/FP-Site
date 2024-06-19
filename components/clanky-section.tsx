@@ -1,22 +1,11 @@
-"use client"
-
 import { getArticlesForHomepage } from "@/lib/contentful";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { useEffect, useState } from "react";
 
-const ClankySection = () => {
-  const [articles, setArticles] = useState([]);
-
-  useEffect(() => {
-    const fetchArticles = async () => {
-      const fetchedArticles = await getArticlesForHomepage();
-      setArticles(fetchedArticles);
-    };
-
-    fetchArticles();
-  }, []);
+export const dynamic = "force-dynamic";
+const ClankySection = async () => {
+  const articles = await getArticlesForHomepage();
 
   return (
     <section
