@@ -78,19 +78,24 @@ export async function getArticlesForHomepage(
 }
 
 export async function getAllArticles(limit = 9, skip = 0, isDraftMode = false) {
-  const articles = await fetchGraphQL(
-    `query {
-         knowledgeArticleCollection(where:{slug_exists: true}, order: date_DESC, limit: ${limit}, skip: ${skip}, preview: ${
-      isDraftMode ? "true" : "false"
-    }) {
-           items {
-             ${ARTICLE_GRAPHQL_FIELDS}
-           }
-         }
-       }`,
-    isDraftMode
-  );
-  return extractArticleEntries(articles);
+  try {
+    const articles = await fetchGraphQL(
+      `query {
+              knowledgeArticleCollection(where:{slug_exists: true}, order: date_DESC, limit: ${limit}, skip: ${skip}, preview: ${
+        isDraftMode ? "true" : "false"
+      }) {
+              items {
+                  ${ARTICLE_GRAPHQL_FIELDS}
+              }
+          }
+          }`,
+      isDraftMode
+    );
+    return extractArticleEntries(articles);
+  } catch (error) {
+    console.error("Failed to fetch articles:", error);
+    throw new Error("Failed to fetch articles");
+  }
 }
 
 export async function getAllArticlesTwo(

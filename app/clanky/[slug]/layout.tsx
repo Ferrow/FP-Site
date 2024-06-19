@@ -14,10 +14,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <div className={inter.className}>
-      <Navigation background="bg-slate-800" />
-      {children}
-    </div>
-  );
+  return <div className={inter.className}>{children}</div>;
 }
