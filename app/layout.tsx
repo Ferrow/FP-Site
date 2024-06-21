@@ -10,7 +10,6 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Finančná Pevnosť",
   description: "Poskytujeme poradenstvo v oblasti investovania, úverov, poistenia a realít.",
-
 };
 
 
@@ -28,14 +27,16 @@ export default function RootLayout({
         href="/logo_modre.ico"
         sizes="any"
       />
-      
+
       <meta property="og:image" content="/logo_modre.png" />
       <meta property="og:image:width" content="256" />
       <meta property="og:image:height" content="256" />
+      <meta property="og:image:alt" content="Poskytujeme poradenstvo v oblasti investovania, úverov, poistenia a realít." />
 
       <meta name="twitter:image" content="/logo_modre.png" />
       <meta name="twitter:image:width" content="256" />
       <meta name="twitter:image:height" content="256" />
+      <meta name="twitter:image:alt" content="Poskytujeme poradenstvo v oblasti investovania, úverov, poistenia a realít." />
 
 
         <script
