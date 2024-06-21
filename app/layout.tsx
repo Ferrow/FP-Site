@@ -20,6 +20,12 @@ export default function RootLayout({
   return (
     <html lang="sk" className="scroll-smooth">
       <head>
+      <link
+        rel="icon"
+        href="/logo_modre.png"
+        type="image/png"
+        sizes="16x16"
+      />
         <script
           id="cookieyes"
           type="text/javascript"
