@@ -32,11 +32,13 @@ export default function RootLayout({
       <meta property="og:image:width" content="256" />
       <meta property="og:image:height" content="256" />
       <meta property="og:image:alt" content="Poskytujeme poradenstvo v oblasti investovania, úverov, poistenia a realít." />
+      <meta property="og:description" content="Poskytujeme poradenstvo v oblasti investovania, úverov, poistenia a realít." />
 
       <meta name="twitter:image" content="/logo_modre.png" />
       <meta name="twitter:image:width" content="256" />
       <meta name="twitter:image:height" content="256" />
       <meta name="twitter:image:alt" content="Poskytujeme poradenstvo v oblasti investovania, úverov, poistenia a realít." />
+      <meta name="twitter:description" content="Poskytujeme poradenstvo v oblasti investovania, úverov, poistenia a realít." />
 
 
         <script
