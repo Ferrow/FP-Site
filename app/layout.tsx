@@ -22,9 +22,8 @@ export default function RootLayout({
       <head>
       <link
         rel="icon"
-        href="/logo_modre.png"
-        type="image/png"
-        sizes="16x16"
+        href="/logo_modre.ico"
+        sizes="any"
       />
         <script
           id="cookieyes"
